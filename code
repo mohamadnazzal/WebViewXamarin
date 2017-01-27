@@ -59,4 +59,5 @@ namespace WEBVIEW
 // Don't forget to add an icon as you like in Drawable as Icon.png 
 // Visit http://mohamadnazzal.me , feel free to ask me any question.
 // SOURCE : https://developer.xamarin.com/guides/android/user_interface/web_view/
+// Preview this code in a real app : https://play.google.com/store/apps/details?id=me.mohamadnazzal&hl=en
     
