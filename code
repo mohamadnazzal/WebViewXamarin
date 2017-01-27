@@ -1,0 +1,62 @@
+// Hello, copy this code to visual studio. Default project name : WEBVIEW
+// Follow these steps to make is done.
+// 1- At first, go to MainActivity.cs and paste this : 
+//*********************************************************************************************************************
+using Android.App;
+using Android.Widget;
+using Android.OS;
+using Android.Webkit;
+
+namespace WEBVIEW
+{
+    [Activity(Label = "Mohamad Nazzal Web View", MainLauncher = true, Theme = "@android:style/Theme.NoTitleBar")]
+
+    public class MainActivity : Activity
+    {
+        private WebView web; //WebView here is a type  
+        protected override void OnCreate(Bundle bundle)
+        {
+            base.OnCreate(bundle);
+            
+            SetContentView (Resource.Layout.Main);
+            
+            web = FindViewById<WebView>(Resource.Id.webview);
+            web.Settings.JavaScriptEnabled = true;
+            web.LoadUrl("http://mohamadnazzal.me");
+            web.SetWebViewClient(new HelloWebViewClient());
+        }
+        
+        public class HelloWebViewClient : WebViewClient
+        {
+            public override bool ShouldOverrideUrlLoading(WebView view, string url)
+            {
+                view.LoadUrl(url);
+                return true;
+            }
+        }
+    }
+}
+//*********************************************************************************************************************
+// 2- Now go to AndroidManifest.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="me.mohamadnazzal" android:versionCode="1" android:versionName="1.0" android:installLocation="internalOnly">
+	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="21" />
+  <uses-permission android:name="android.permission.INTERNET"/> // This line helping the app to connect to the internet
+  <application android:label="Mohamad Nazzal Official" android:icon="@drawable/Icon"></application> 
+</manifest>
+
+//*********************************************************************************************************************
+//3- Go to Main.axml 
+
+<?xml version="1.0" encoding="utf-8"?>
+<WebView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/webview" 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
+    
+//*********************************************************************************************************************  
+// Don't forget to add an icon as you like in Drawable as Icon.png 
+// Visit http://mohamadnazzal.me , feel free to ask me any question.
+// SOURCE : https://developer.xamarin.com/guides/android/user_interface/web_view/
+    
