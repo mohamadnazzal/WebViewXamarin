@@ -22,7 +22,7 @@ namespace WEBVIEW
             
             web = FindViewById<WebView>(Resource.Id.webview);
             web.Settings.JavaScriptEnabled = true;
-            web.LoadUrl("http://mohamadnazzal.me");
+            web.LoadUrl("http://mohamadnazzal.me"); // Here you can add your website 
             web.SetWebViewClient(new HelloWebViewClient());
         }
         
