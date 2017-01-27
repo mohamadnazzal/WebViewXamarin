@@ -1,5 +1,5 @@
 // Hello, copy this code to visual studio. Default project name : WEBVIEW
-// Follow these steps to make is done.
+// Follow these steps as well
 // 1- At first, go to MainActivity.cs and paste this : 
 //*********************************************************************************************************************
 using Android.App;
